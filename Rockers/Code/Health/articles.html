@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Articles & Blog - HealthHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- <link rel="stylesheet" href="css/articles.css"> -->
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header Section -->
+    <header>
+      <div class="logo-container">
+        <div class="logo-line"></div>
+        <h1 class="logo">HealthHub</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="articles.html" class="active">Articles</a></li>
+          <li><a href="symptom-checker.html">Symptom Checker</a></li>
+          <li><a href="diet-exercise.html">Diet & Exercise</a></li>
+          <li><a href="calculators.html">Health Calculators</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Articles Hero Section -->
+    <section class="page-hero">
+      <div class="hero-content">
+        <h1>Health Articles & Blog</h1>
+        <p>Stay informed with the latest health research, tips, and expert advice</p>
+      </div>
+    </section>
+
+    <!-- Article Categories -->
+    <section class="article-categories">
+      <h2>Browse by Category</h2>
+      <div class="category-filters">
+        <button class="category-btn active" data-category="all">All Articles</button>
+        <button class="category-btn" data-category="nutrition">Nutrition</button>
+        <button class="category-btn" data-category="fitness">Fitness</button>
+        <button class="category-btn" data-category="mental-health">Mental Health</button>
+        <button class="category-btn" data-category="wellness">Wellness</button>
+        <button class="category-btn" data-category="medical">Medical</button>
+      </div>
+    </section>
+
+    <!-- Featured Articles -->
+    <section class="featured-articles">
+      <h2>Featured Articles</h2>
+      <div class="articles-grid">
+        <article class="article-card" data-category="nutrition">
+          <div class="article-image">
+            <img src="images/article1.jpg" alt="Nutrition Article">
+            <span class="article-category">Nutrition</span>
+          </div>
+          <div class="article-content">
+            <h3>The Science Behind Intermittent Fasting</h3>
+            <p class="article-excerpt">Explore the research on intermittent fasting and its potential benefits for metabolism and longevity.</p>
+            <div class="article-meta">
+              <span class="article-date">March 15, 2025</span>
+              <span class="article-read-time">8 min read</span>
+            </div>
+            <a href="#" class="read-more">Read Article</a>
+          </div>
+        </article>
+
+        <article class="article-card" data-category="fitness">
+          <div class="article-image">
+            <img src="images/article2.jpg" alt="Fitness Article">
+            <span class="article-category">Fitness</span>
+          </div>
+          <div class="article-content">
+            <h3>High-Intensity Interval Training: Benefits and Risks</h3>
+            <p class="article-excerpt">A comprehensive look at HIIT workouts, their effectiveness, and considerations for different fitness levels.</p>
+            <div class="article-meta">
+              <span class="article-date">March 12, 2025</span>
+              <span class="article-read-time">6 min read</span>
+            </div>
+            <a href="#" class="read-more">Read Article</a>
+          </div>
+        </article>
+
+        <article class="article-card" data-category="mental-health">
+          <div class="article-image">
+            <img src="images/article3.jpg" alt="Mental Health Article">
+            <span class="article-category">Mental Health</span>
+          </div>
+          <div class="article-content">
+            <h3>Mindfulness Meditation: A Practical Guide for Beginners</h3>
+            <p class="article-excerpt">Learn simple techniques to incorporate mindfulness into your daily routine for improved mental wellbeing.</p>
+            <div class="article-meta">
+              <span class="article-date">March 10, 2025</span>
+              <span class="article-read-time">5 min read</span>
+            </div>
+            <a href="#" class="read-more">Read Article</a>
+          </div>
+        </article>
+
+        <article class="article-card" data-category="wellness">
+          <div class="article-image">
+            <img src="images/article4.jpg" alt="Wellness Article">
+            <span class="article-category">Wellness</span>
+          </div>
+          <div class="article-content">
+            <h3>The Connection Between Sleep Quality and Overall Health</h3>
+            <p class="article-excerpt">Discover how sleep affects various aspects of your health and strategies for improving sleep quality.</p>
+            <div class="article-meta">
+              <span class="article-date">March 8, 2025</span>
+              <span class="article-read-time">7 min read</span>
+            </div>
+            <a href="#" class="read-more">Read Article</a>
+          </div>
+        </article>
+
+        <article class="article-card" data-category="medical">
+          <div class="article-image">
+            <img src="images/article5.jpg" alt="Medical Article">
+            <span class="article-category">Medical</span>
+          </div>
+          <div class="article-content">
+            <h3>Understanding Preventive Health Screenings by Age</h3>
+            <p class="article-excerpt">A guide to recommended health screenings at different life stages to catch potential issues early.</p>
+            <div class="article-meta">
+              <span class="article-date">March 5, 2025</span>
+              <span class="article-read-time">9 min read</span>
+            </div>
+            <a href="#" class="read-more">Read Article</a>
+          </div>
+        </article>
+
+        <article class="article-card" data-category="nutrition">
+          <div class="article-image">
+            <img src="images/article6.jpg" alt="Nutrition Article">
+            <span class="article-category">Nutrition</span>
+          </div>
+          <div class="article-content">
+            <h3>Plant-Based Proteins: Complete Guide to Meeting Your Needs</h3>
+            <p class="article-excerpt">Learn how to get adequate protein from plant sources, with meal plans and nutritional information.</p>
+            <div class="article-meta">
+              <span class="article-date">March 3, 2025</span>
+              <span class="article-read-time">8 min read</span>
+            </div>
+            <a href="#" class="read-more">Read Article</a>
+          </div>
+        </article>
+      </div>
+      <div class="load-more">
+        <button id="load-more-btn">Load More Articles</button>
+      </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter">
+      <div class="newsletter-content">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to our newsletter for the latest health articles and updates</p>
+        <form id="newsletter-form" class="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2>HealthHub</h2>
+          <p>Your complete health resource</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="articles.html">Articles</a></li>
+              <li><a href="symptom-checker.html">Symptom Checker</a></li>
+              <li><a href="diet-exercise.html">Diet & Exercise</a></li>
+              <li><a href="calculators.html">Health Calculators</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Connect</h3>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                </svg>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 HealthHub. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/articles.js"></script>
+</body>
+</html>
+

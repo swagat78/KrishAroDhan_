@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diet & Exercise Plans - HealthHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- <link rel="stylesheet" href="css/diet-exercise.css"> -->
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header Section -->
+    <header>
+      <div class="logo-container">
+        <div class="logo-line"></div>
+        <h1 class="logo">HealthHub</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="articles.html">Articles</a></li>
+          <li><a href="symptom-checker.html">Symptom Checker</a></li>
+          <li><a href="diet-exercise.html" class="active">Diet & Exercise</a></li>
+          <li><a href="calculators.html">Health Calculators</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Diet & Exercise Hero Section -->
+    <section class="page-hero">
+      <div class="hero-content">
+        <h1>Diet & Exercise Plans</h1>
+        <p>Customized nutrition and fitness plans to help you achieve your health goals</p>
+      </div>
+    </section>
+
+    <!-- Plan Generator -->
+    <section class="plan-generator">
+      <h2>Create Your Personalized Plan</h2>
+      <p>Answer a few questions to get a customized diet and exercise plan that fits your goals and preferences.</p>
+      
+      <div class="generator-container">
+        <div class="generator-sidebar">
+          <div class="progress-tracker">
+            <div class="progress-step active" data-step="1">
+              <div class="step-number">1</div>
+              <div class="step-label">Goals</div>
+            </div>
+            <div class="progress-step" data-step="2">
+              <div class="step-number">2</div>
+              <div class="step-label">Diet</div>
+            </div>
+            <div class="progress-step" data-step="3">
+              <div class="step-number">3</div>
+              <div class="step-label">Exercise</div>
+            </div>
+            <div class="progress-step" data-step="4">
+              <div class="step-number">4</div>
+              <div class="step-label">Lifestyle</div>
+            </div>
+            <div class="progress-step" data-step="5">
+              <div class="step-number">5</div>
+              <div class="step-label">Your Plan</div>
+            </div>
+          </div>
+          <div class="sidebar-info">
+            <h3>Why Personalization Matters</h3>
+            <p>Everyone's body, preferences, and goals are different. A personalized plan is more effective and sustainable than a one-size-fits-all approach.</p>
+          </div>
+        </div>
+        
+        <div class="generator-main">
+          <!-- Step 1: Goals -->
+          <div class="step-panel active" id="step-1">
+            <h3>Your Health Goals</h3>
+            <form id="goals-form">
+              <div class="form-group">
+                <label for="primary-goal">What is your primary goal?</label>
+                <select id="primary-goal" name="primary-goal" required>
+                  <option value="">Select your primary goal</option>
+                  <option value="lose-weight">Lose Weight</option>
+                  <option value="build-muscle">Build Muscle</option>
+                  <option value="improve-fitness">Improve Overall Fitness</option>
+                  <option value="increase-energy">Increase Energy Levels</option>
+                  <option value="manage-health">Manage Health Condition</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label>Do you have any secondary goals? (Select all that apply)</label>
+                <div class="checkbox-group">
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="secondary-goals" value="improve-sleep">
+                    Improve Sleep Quality
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="secondary-goals" value="reduce-stress">
+                    Reduce Stress
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="secondary-goals" value="improve-flexibility">
+                    Improve Flexibility
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="secondary-goals" value="increase-strength">
+                    Increase Strength
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="secondary-goals" value="improve-endurance">
+                    Improve Endurance
+                  </label>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="timeframe">What is your timeframe for achieving your primary goal?</label>
+                <select id="timeframe" name="timeframe" required>
+                  <option value="">Select timeframe</option>
+                  <option value="1-month">1 Month</option>
+                  <option value="3-months">3 Months</option>
+                  <option value="6-months">6 Months</option>
+                  <option value="1-year">1 Year</option>
+                  <option value="ongoing">Ongoing/Lifestyle Change</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="current-activity">What is your current activity level?</label>
+                <select id="current-activity" name="current-activity" required>
+                  <option value="">Select activity level</option>
+                  <option value="sedentary">Sedentary (Little to no exercise)</option>
+                  <option value="light">Lightly Active (Light exercise 1-3 days/week)</option>
+                  <option value="moderate">Moderately Active (Moderate exercise 3-5 days/week)</option>
+                  <option value="very">Very Active (Hard exercise 6-7 days/week)</option>
+                  <option value="extra">Extra Active (Very hard exercise & physical job)</option>
+                </select>
+              </div>
+              
+              <div class="form-actions">
+                <button type="button" class="next-btn" data-next="2">Continue</button>
+              </div>
+            </form>
+          </div>
+          
+          <!-- Step 2: Diet Preferences -->
+          <div class="step-panel" id="step-2">
+            <h3>Diet Preferences</h3>
+            <form id="diet-form">
+              <div class="form-group">
+                <label for="diet-type">Do you follow any specific diet?</label>
+                <select id="diet-type" name="diet-type" required>
+                  <option value="">Select diet type</option>
+                  <option value="no-restrictions">No Specific Diet</option>
+                  <option value="vegetarian">Vegetarian</option>
+                  <option value="vegan">Vegan</option>
+                  <option value="pescatarian">Pescatarian</option>
+                  <option value="keto">Ketogenic</option>
+                  <option value="paleo">Paleo</option>
+                  <option value="mediterranean">Mediterranean</option>
+                  <option value="low-carb">Low Carb</option>
+                  <option value="gluten-free">Gluten-Free</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label>Do you have any food allergies or intolerances? (Select all that apply)</label>
+                <div class="checkbox-group">
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="allergies" value="dairy">
+                    Dairy
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="allergies" value="eggs">
+                    Eggs
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="allergies" value="nuts">
+                    Nuts
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="allergies" value="soy">
+                    Soy
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="allergies" value="gluten">
+                    Gluten
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="allergies" value="shellfish">
+                    Shellfish
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="allergies" value="other">
+                    Other
+                  </label>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="meals-per-day">How many meals do you prefer per day?</label>
+                <select id="meals-per-day" name="meals-per-day" required>
+                  <option value="">Select number of meals</option>
+                  <option value="3">3 meals</option>
+                  <option value="4">4 meals</option>
+                  <option value="5">5 meals</option>
+                  <option value="6">6 meals</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="cooking-time">How much time can you spend on meal preparation daily?</label>
+                <select id="cooking-time" name="cooking-time" required>
+                  <option value="">Select time</option>
+                  <option value="minimal">Minimal (15-30 minutes)</option>
+                  <option value="moderate">Moderate (30-60 minutes)</option>
+                  <option value="extensive">Extensive (60+ minutes)</option>
+                </select>
+              </div>
+              
+              <div class="form-actions">
+                <button type="button" class="back-btn" data-back="1">Back</button>
+                <button type="button" class="next-btn" data-next="3">Continue</button>
+              </div>
+            </form>
+          </div>
+          
+          <!-- Step 3: Exercise Preferences -->
+          <div class="step-panel" id="step-3">
+            <h3>Exercise Preferences</h3>
+            <form id="exercise-form">
+              <div class="form-group">
+                <label>What types of exercise do you enjoy? (Select all that apply)</label>
+                <div class="checkbox-group">
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="exercise-types" value="cardio">
+                    Cardio (Running, Cycling, Swimming)
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="exercise-types" value="strength">
+                    Strength Training
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="exercise-types" value="hiit">
+                    HIIT (High-Intensity Interval Training)
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="exercise-types" value="yoga">
+                    Yoga/Pilates
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="exercise-types" value="sports">
+                    Sports (Basketball, Tennis, etc.)
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="exercise-types" value="walking">
+                    Walking
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="exercise-types" value="dancing">
+                    Dancing
+                  </label>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="exercise-frequency">How many days per week can you exercise?</label>
+                <select id="exercise-frequency" name="exercise-frequency" required>
+                  <option value="">Select frequency</option>
+                  <option value="1-2">1-2 days</option>
+                  <option value="3-4">3-4 days</option>
+                  <option value="5-6">5-6 days</option>
+                  <option value="7">7 days</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="exercise-duration">How long can you exercise per session?</label>
+                <select id="exercise-duration" name="exercise-duration" required>
+                  <option value="">Select duration</option>
+                  <option value="15-30">15-30 minutes</option>
+                  <option value="30-45">30-45 minutes</option>
+                  <option value="45-60">45-60 minutes</option>
+                  <option value="60+">60+ minutes</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="exercise-location">Where do you prefer to exercise?</label>
+                <select id="exercise-location" name="exercise-location" required>
+                  <option value="">Select location</option>
+                  <option value="home">At Home</option>
+                  <option value="gym">At a Gym</option>
+                  <option value="outdoors">Outdoors</option>
+                  <option value="mixed">Mixed (Combination)</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="fitness-level">What is your current fitness level?</label>
+                <select id="fitness-level" name="fitness-level" required>
+                  <option value="">Select fitness level</option>
+                  <option value="beginner">Beginner</option>
+                  <option value="intermediate">Intermediate</option>
+                  <option value="advanced">Advanced</option>
+                </select>
+              </div>
+              
+              <div class="form-actions">
+                <button type="button" class="back-btn" data-back="2">Back</button>
+                <button type="button" class="next-btn" data-next="4">Continue</button>
+              </div>
+            </form>
+          </div>
+          
+          <!-- Step 4: Lifestyle Factors -->
+          <div class="step-panel" id="step-4">
+            <h3>Lifestyle Factors</h3>
+            <form id="lifestyle-form">
+              <div class="form-group">
+                <label for="sleep-hours">How many hours do you typically sleep per night?</label>
+                <select id="sleep-hours" name="sleep-hours" required>
+                  <option value="">Select hours</option>
+                  <option value="less-than-6">Less than 6 hours</option>
+                  <option value="6-7">6-7 hours</option>
+                  <option value="7-8">7-8 hours</option>
+                  <option value="8-9">8-9 hours</option>
+                  <option value="more-than-9">More than 9 hours</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="stress-level">How would you rate your current stress level?</label>
+                <select id="stress-level" name="stress-level" required>
+                  <option value="">Select stress level</option>
+                  <option value="low">Low</option>
+                  <option value="moderate">Moderate</option>
+                  <option value="high">High</option>
+                  <option value="very-high">Very High</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="work-type">What type of work do you do?</label>
+                <select id="work-type" name="work-type" required>
+                  <option value="">Select work type</option>
+                  <option value="sedentary">Sedentary (Desk Job)</option>
+                  <option value="light-activity">Light Activity</option>
+                  <option value="moderate-activity">Moderate Activity</option>
+                  <option value="heavy-activity">Heavy Activity</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label>Do you have any health conditions that might affect your diet or exercise plan?</label>
+                <div class="checkbox-group">
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="health-conditions" value="diabetes">
+                    Diabetes
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="health-conditions" value="hypertension">
+                    Hypertension
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="health-conditions" value="heart-disease">
+                    Heart Disease
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="health-conditions" value="arthritis">
+                    Arthritis
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="health-conditions" value="back-pain">
+                    Back Pain
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="health-conditions" value="other">
+                    Other
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="health-conditions" value="none">
+                    None
+                  </label>
+                </div>
+              </div>
+              
+              <div class="form-actions">
+                <button type="button" class="back-btn" data-back="3">Back</button>
+                <button type="button" id="generate-plan-btn" class="next-btn" data-next="5">Generate My Plan</button>
+              </div>
+            </form>
+          </div>
+          
+          <!-- Step 5: Your Plan -->
+          <div class="step-panel" id="step-5">
+            <h3>Your Personalized Plan</h3>
+            <div id="plan-loading" class="plan-loading">
+              <div class="spinner"></div>
+              <p>Creating your personalized plan...</p>
+            </div>
+            <div id="plan-content" class="plan-content" style="display: none;">
+              <div class="plan-summary">
+                <h4>Plan Summary</h4>
+                <div class="summary-details">
+                  <div class="summary-item">
+                    <span class="summary-label">Primary Goal:</span>
+                    <span id="summary-goal" class="summary-value">--</span>
+                  </div>
+                  <div class="summary-item">
+                    <span class="summary-label">Diet Type:</span>
+                    <span id="summary-diet" class="summary-value">--</span>
+                  </div>
+                  <div class="summary-item">
+                    <span class="summary-label">Exercise Focus:</span>
+                    <span id="summary-exercise" class="summary-value">--</span>
+                  </div>
+                  <div class="summary-item">
+                    <span class="summary-label">Timeframe:</span>
+                    <span id="summary-timeframe" class="summary-value">--</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="plan-tabs">
+                <button class="plan-tab active" data-tab="diet-plan">Diet Plan</button>
+                <button class="plan-tab" data-tab="exercise-plan">Exercise Plan</button>
+                <button class="plan-tab" data-tab="lifestyle-tips">Lifestyle Tips</button>
+              </div>
+              
+              <div class="plan-tab-content">
+                <!-- Diet Plan Tab -->
+                <div class="tab-panel active" id="diet-plan">
+                  <div class="diet-overview">
+                    <h4>Nutrition Overview</h4>
+                    <div class="nutrition-chart">
+                      <div class="macro-bar">
+                        <div id="protein-bar" class="macro-segment protein" style="width: 30%">
+                          <span>Protein</span>
+                        </div>
+                        <div id="carbs-bar" class="macro-segment carbs" style="width: 45%">
+                          <span>Carbs</span>
+                        </div>
+                        <div id="fat-bar" class="macro-segment fat" style="width: 25%">
+                          <span>Fat</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="macro-values">
+                      <div class="macro-value">
+                        <span id="protein-value">-- g</span>
+                        <span class="macro-label">Protein</span>
+                      </div>
+                      <div class="macro-value">
+                        <span id="carbs-value">-- g</span>
+                        <span class="macro-label">Carbs</span>
+                      </div>
+                      <div class="macro-value">
+                        <span id="fat-value">-- g</span>
+                        <span class="macro-label">Fat</span>
+                      </div>
+                      <div class="macro-value">
+                        <span id="calories-value">-- kcal</span>
+                        <span class="macro-label">Total</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="meal-plan">
+                    <h4>Sample Daily Meal Plan</h4>
+                    <div class="meal-accordion">
+                      <div class="meal-item">
+                        <div class="meal-header">
+                          <h5>Breakfast</h5>
+                          <div class="meal-toggle"></div>
+                        </div>
+                        <div class="meal-content">
+                          <div id="breakfast-content">
+                            <!-- Will be populated by JavaScript -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="meal-item">
+                        <div class="meal-header">
+                          <h5>Lunch</h5>
+                          <div class="meal-toggle"></div>
+                        </div>
+                        <div class="meal-content">
+                          <div id="lunch-content">
+                            <!-- Will be populated by JavaScript -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="meal-item">
+                        <div class="meal-header">
+                          <h5>Dinner</h5>
+                          <div class="meal-toggle"></div>
+                        </div>
+                        <div class="meal-content">
+                          <div id="dinner-content">
+                            <!-- Will be populated by JavaScript -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="meal-item">
+                        <div class="meal-header">
+                          <h5>Snacks</h5>
+                          <div class="meal-toggle"></div>
+                        </div>
+                        <div class="meal-content">
+                          <div id="snacks-content">
+                            <!-- Will be populated by JavaScript -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="diet-tips">
+                    <h4>Nutrition Tips</h4>
+                    <ul id="nutrition-tips">
+                      <!-- Will be populated by JavaScript -->
+                    </ul>
+                  </div>
+                </div>
+                
+                <!-- Exercise Plan Tab -->
+                <div class="tab-panel" id="exercise-plan">
+                  <div class="weekly-schedule">
+                    <h4>Weekly Exercise Schedule</h4>
+                    <div class="schedule-grid">
+                      <!-- Will be populated by JavaScript -->
+                    </div>
+                  </div>
+                  
+                  <div class="workout-examples">
+                    <h4>Sample Workouts</h4>
+                    <div class="workout-accordion">
+                      <!-- Will be populated by JavaScript -->
+                    </div>
+                  </div>
+                  
+                  <div class="exercise-progression">
+                    <h4>Progression Plan</h4>
+                    <div class="progression-timeline">
+                      <!-- Will be populated by JavaScript -->
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Lifestyle Tips Tab -->
+                <div class="tab-panel" id="lifestyle-tips">
+                  <div class="lifestyle-sections">
+                    <div class="lifestyle-section">
+                      <h4>Sleep Optimization</h4>
+                      <ul id="sleep-tips">
+                        <!-- Will be populated by JavaScript -->
+                      </ul>
+                    </div>
+                    
+                    <div class="lifestyle-section">
+                      <h4>Stress Management</h4>
+                      <ul id="stress-tips">
+                        <!-- Will be populated by JavaScript -->
+                      </ul>
+                    </div>
+                    
+                    <div class="lifestyle-section">
+                      <h4>Habit Building</h4>
+                      <ul id="habit-tips">
+                        <!-- Will be populated by JavaScript -->
+                      </ul>
+                    </div>
+                    
+                    <div class="lifestyle-section">
+                      <h4>Progress Tracking</h4>
+                      <p>Track your progress to stay motivated and make adjustments as needed.</p>
+                      <div class="tracking-methods">
+                        <div class="tracking-method">
+                          <h5>Measurements</h5>
+                          <p>Track body measurements weekly</p>
+                        </div>
+                        <div class="tracking-method">
+                          <h5>Food Journal</h5>
+                          <p>Log your meals and snacks</p>
+                        </div>
+                        <div class="tracking-method">
+                          <h5>Workout Log</h5>
+                          <p>Record exercises, sets, and reps</p>
+                        </div>
+                        <div class="tracking-method">
+                          <h5>Progress Photos</h5>
+                          <p>Take photos every 2-4 weeks</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="plan-actions">
+                <button id="print-plan-btn" class="secondary-btn">Print Plan</button>
+                <button id="save-plan-btn" class="primary-btn">Save Plan</button>
+                <button id="start-over-btn" class="text-btn">Start Over</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Resources -->
+    <section class="featured-resources">
+      <h2>Additional Resources</h2>
+      <div class="resources-grid">
+        <div class="resource-card">
+          <div class="resource-image">
+            <img src="images/recipe-book.jpg" alt="Recipe Book">
+          </div>
+          <div class="resource-content">
+            <h3>Healthy Recipe Collection</h3>
+            <p>Browse our collection of nutritious and delicious recipes for every diet type.</p>
+            <a href="#" class="resource-link">View Recipes</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-image">
+            <img src="images/exercise-library.jpg" alt="Exercise Library">
+          </div>
+          <div class="resource-content">
+            <h3>Exercise Library</h3>
+            <p>Detailed instructions and videos for hundreds of exercises for all fitness levels.</p>
+            <a href="#" class="resource-link">Browse Exercises</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-image">
+            <img src="images/progress-tracker.jpg" alt="Progress Tracker">
+          </div>
+          <div class="resource-content">
+            <h3>Progress Tracker</h3>
+            <p>Track your measurements, workouts, and nutrition to monitor your progress.</p>
+            <a href="#" class="resource-link">Start Tracking</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2>HealthHub</h2>
+          <p>Your complete health resource</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="articles.html">Articles</a></li>
+              <li><a href="symptom-checker.html">Symptom Checker</a></li>
+              <li><a href="diet-exercise.html">Diet & Exercise</a></li>
+              <li><a href="calculators.html">Health Calculators</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Connect</h3>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                </svg>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 HealthHub. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/diet-exercise.js"></script>
+</body>
+</html>
+

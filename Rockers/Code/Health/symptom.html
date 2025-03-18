@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Symptom Checker - HealthHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- <link rel="stylesheet" href="css/symptom-checker.css"> -->
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header Section -->
+    <header>
+      <div class="logo-container">
+        <div class="logo-line"></div>
+        <h1 class="logo">HealthHub</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="articles.html">Articles</a></li>
+          <li><a href="symptom-checker.html" class="active">Symptom Checker</a></li>
+          <li><a href="diet-exercise.html">Diet & Exercise</a></li>
+          <li><a href="calculators.html">Health Calculators</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Symptom Checker Hero Section -->
+    <section class="page-hero">
+      <div class="hero-content">
+        <h1>Symptom Checker</h1>
+        <p>Identify possible conditions based on your symptoms</p>
+      </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="disclaimer">
+      <div class="disclaimer-content">
+        <h2>Important Disclaimer</h2>
+        <p>This symptom checker is for informational purposes only and is not a qualified medical opinion. Information provided should not be used for diagnosis or treatment of medical conditions. Always consult with a healthcare professional for medical advice.</p>
+      </div>
+    </section>
+
+    <!-- Symptom Checker Tool -->
+    <section class="symptom-checker-tool">
+      <div class="tool-container">
+        <div class="tool-sidebar">
+          <h3>How It Works</h3>
+          <ol>
+            <li>Enter your basic information</li>
+            <li>Select your symptoms</li>
+            <li>Provide additional details</li>
+            <li>Review possible conditions</li>
+          </ol>
+          <div class="info-box">
+            <h4>Why We Ask</h4>
+            <p>Age, sex, and other factors can significantly affect the likelihood of various conditions. Providing accurate information helps our tool give more relevant results.</p>
+          </div>
+        </div>
+        
+        <div class="tool-main">
+          <div class="step-indicator">
+            <div class="step active" data-step="1">
+              <div class="step-number">1</div>
+              <div class="step-label">Basic Info</div>
+            </div>
+            <div class="step" data-step="2">
+              <div class="step-number">2</div>
+              <div class="step-label">Symptoms</div>
+            </div>
+            <div class="step" data-step="3">
+              <div class="step-number">3</div>
+              <div class="step-label">Details</div>
+            </div>
+            <div class="step" data-step="4">
+              <div class="step-number">4</div>
+              <div class="step-label">Results</div>
+            </div>
+          </div>
+          
+          <div class="step-content">
+            <!-- Step 1: Basic Information -->
+            <div class="step-panel active" id="step-1">
+              <h3>Basic Information</h3>
+              <form id="basic-info-form">
+                <div class="form-group">
+                  <label for="age">Age</label>
+                  <input type="number" id="age" name="age" min="18" max="120" required>
+                </div>
+                <div class="form-group">
+                  <label>Biological Sex</label>
+                  <div class="radio-group">
+                    <label>
+                      <input type="radio" name="sex" value="male" required>
+                      Male
+                    </label>  name="sex" value="male" required>
+                      Male
+                    </label>
+                    <label>
+                      <input type="radio" name="sex" value="female" required>
+                      Female
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="height">Height (cm)</label>
+                  <input type="number" id="height" name="height" min="100" max="250">
+                </div>
+                <div class="form-group">
+                  <label for="weight">Weight (kg)</label>
+                  <input type="number" id="weight" name="weight" min="30" max="300">
+                </div>
+                <div class="form-group">
+                  <label>Do you have any chronic conditions?</label>
+                  <div class="checkbox-group">
+                    <label>
+                      <input type="checkbox" name="conditions" value="diabetes">
+                      Diabetes
+                    </label>
+                    <label>
+                      <input type="checkbox" name="conditions" value="hypertension">
+                      Hypertension
+                    </label>
+                    <label>
+                      <input type="checkbox" name="conditions" value="asthma">
+                      Asthma
+                    </label>
+                    <label>
+                      <input type="checkbox" name="conditions" value="heart-disease">
+                      Heart Disease
+                    </label>
+                    <label>
+                      <input type="checkbox" name="conditions" value="other">
+                      Other
+                    </label>
+                  </div>
+                </div>
+                <div class="form-actions">
+                  <button type="button" class="next-btn" data-next="2">Continue</button>
+                </div>
+              </form>
+            </div>
+            
+            <!-- Step 2: Symptoms Selection -->
+            <div class="step-panel" id="step-2">
+              <h3>Select Your Symptoms</h3>
+              <div class="symptom-search">
+                <input type="text" id="symptom-search" placeholder="Search for symptoms...">
+              </div>
+              <div class="symptom-categories">
+                <div class="category">
+                  <h4>General</h4>
+                  <div class="symptom-list">
+                    <label class="symptom-item">
+                      <input type="checkbox" name="symptoms" value="fever">
+                      Fever
+                    </label>
+                    <label class="symptom-item">
+                      <input type="checkbox" name="symptoms" value="fatigue">
+                      Fatigue
+                    </label>
+                    <label class="symptom-item">
+                      <input type="checkbox" name="symptoms" value="weakness">
+                      Weakness
+                    </label>
+                    <label class="symptom-item">
+                      <input type="checkbox" name="symptoms" value="chills">
+                      Chills
+                    </label>
+                  </div>
+                </div>
+                <div class="category">
+                  <h4>Head & Neck</h4>
+                  <div class="symptom-list">
+                    <label class="symptom-item">
+                      <input type="checkbox" name="symptoms" value="headache">
+                      Headache
+                    </label>
+                    <label class="symptom-item">
+                      <input type="checkbox" name="symptoms" value="dizziness">
+                      Dizziness
+                    </label>
+                    <label class="symptom-item">
+                      <input type="checkbox" name="symptoms" value="sore-throat">
+                      Sore Throat
+                    </label>
+                    <label class="symptom-item">
+                      <input type="checkbox" name="symptoms" value="neck-pain">
+                      Neck Pain
+                    </label>
+                  </div>
+                </div>
+                <div class="category">
+                  <h4>Chest & Respiratory</h4>
+                  <div class="symptom-list">
+                    <label class="symptom-item">
+                      <input type="checkbox" name="symptoms" value="chest-pain">
+                      Chest Pain
+                    </label>
+                    <label class="symptom-item">
+                      <input type="checkbox" name="symptoms" value="shortness-of-breath">
+                      Shortness of Breath
+                    </label>
+                    <label class="symptom-item">
+                      <input type="checkbox" name="symptoms" value="cough">
+                      Cough
+                    </label>
+                    <label class="symptom-item">
+                      <input type="checkbox" name="symptoms" value="wheezing">
+                      Wheezing
+                    </label>
+                  </div>
+                </div>
+                <div class="category">
+                  <h4>Digestive</h4>
+                  <div class="symptom-list">
+                    <label class="symptom-item">
+                      <input type="checkbox" name="symptoms" value="nausea">
+                      Nausea
+                    </label>
+                    <label class="symptom-item">
+                      <input type="checkbox" name="symptoms" value="vomiting">
+                      Vomiting
+                    </label>
+                    <label class="symptom-item">
+                      <input type="checkbox" name="symptoms" value="diarrhea">
+                      Diarrhea
+                    </label>
+                    <label class="symptom-item">
+                      <input type="checkbox" name="symptoms" value="abdominal-pain">
+                      Abdominal Pain
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="selected-symptoms">
+                <h4>Selected Symptoms: <span id="symptom-count">0</span></h4>
+                <div id="selected-symptoms-list" class="selected-list"></div>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="back-btn" data-back="1">Back</button>
+                <button type="button" class="next-btn" data-next="3">Continue</button>
+              </div>
+            </div>
+            
+            <!-- Step 3: Additional Details -->
+            <div class="step-panel" id="step-3">
+              <h3>Additional Details</h3>
+              <form id="details-form">
+                <div class="form-group">
+                  <label for="symptom-duration">How long have you been experiencing these symptoms?</label>
+                  <select id="symptom-duration" name="symptom-duration" required>
+                    <option value="">Select duration</option>
+                    <option value="less-than-day">Less than a day</option>
+                    <option value="1-3-days">1-3 days</option>
+                    <option value="4-7-days">4-7 days</option>
+                    <option value="1-2-weeks">1-2 weeks</option>
+                    <option value="more-than-2-weeks">More than 2 weeks</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="symptom-severity">How severe are your symptoms?</label>
+                  <div class="range-slider">
+                    <input type="range" id="symptom-severity" name="symptom-severity" min="1" max="10" value="5">
+                    <div class="range-labels">
+                      <span>Mild</span>
+                      <span>Moderate</span>
+                      <span>Severe</span>
+                    </div>
+                    <div class="range-value">5</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="additional-notes">Any additional information you'd like to provide?</label>
+                  <textarea id="additional-notes" name="additional-notes" rows="4"></textarea>
+                </div>
+                <div class="form-actions">
+                  <button type="button" class="back-btn" data-back="2">Back</button>
+                  <button type="button" id="analyze-btn" class="next-btn" data-next="4">Analyze Symptoms</button>
+                </div>
+              </form>
+            </div>
+            
+            <!-- Step 4: Results -->
+            <div class="step-panel" id="step-4">
+              <h3>Possible Conditions</h3>
+              <div id="analysis-loading" class="analysis-loading">
+                <div class="spinner"></div>
+                <p>Analyzing your symptoms...</p>
+              </div>
+              <div id="results-container" class="results-container" style="display: none;">
+                <div class="results-disclaimer">
+                  <p><strong>Remember:</strong> This is not a diagnosis. The conditions listed below are possibilities based on the symptoms you provided.</p>
+                </div>
+                <div id="possible-conditions" class="possible-conditions">
+                  <!-- Results will be populated by JavaScript -->
+                </div>
+                <div class="next-steps">
+                  <h4>Recommended Next Steps</h4>
+                  <ul id="recommendations">
+                    <!-- Recommendations will be populated by JavaScript -->
+                  </ul>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="back-btn" data-back="3">Back</button>
+                <button type="button" id="start-over-btn" class="primary-btn">Start Over</button>
+                <button type="button" id="print-results-btn" class="secondary-btn">Print Results</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="related-resources">
+      <h2>Related Resources</h2>
+      <div class="resources-grid">
+        <div class="resource-card">
+          <div class="resource-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </div>
+          <h3>Health Articles</h3>
+          <p>Read our articles about common symptoms and conditions</p>
+          <a href="articles.html" class="resource-link">Browse Articles</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+              <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+            </svg>
+          </div>
+          <h3>Symptom Journal</h3>
+          <p>Track your symptoms over time to identify patterns</p>
+          <a href="#" class="resource-link">Start Tracking</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </div>
+          <h3>Find Healthcare</h3>
+          <p>Locate healthcare providers in your area</p>
+          <a href="#" class="resource-link">Find Providers</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2>HealthHub</h2>
+          <p>Your complete health resource</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="articles.html">Articles</a></li>
+              <li><a href="symptom-checker.html">Symptom Checker</a></li>
+              <li><a href="diet-exercise.html">Diet & Exercise</a></li>
+              <li><a href="calculators.html">Health Calculators</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Connect</h3>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                </svg>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 HealthHub. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/symptom-checker.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Calculators - HealthHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- <link rel="stylesheet" href="css/calculators.css"> -->
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header Section -->
+    <header>
+      <div class="logo-container">
+        <div class="logo-line"></div>
+        <h1 class="logo">HealthHub</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="articles.html">Articles</a></li>
+          <li><a href="symptom-checker.html">Symptom Checker</a></li>
+          <li><a href="diet-exercise.html">Diet & Exercise</a></li>
+          <li><a href="calculators.html" class="active">Health Calculators</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Calculators Hero Section -->
+    <section class="page-hero">
+      <div class="hero-content">
+        <h1>Health Calculators</h1>
+        <p>Tools to calculate important health metrics and make informed decisions</p>
+      </div>
+    </section>
+
+    <!-- Calculator Selection -->
+    <section class="calculator-selection">
+      <h2>Choose a Calculator</h2>
+      <div class="calculator-tabs">
+        <button class="tab-btn active" data-tab="bmi">BMI Calculator</button>
+        <button class="tab-btn" data-tab="calorie">Calorie Calculator</button>
+        <button class="tab-btn" data-tab="water">Water Intake</button>
+        <button class="tab-btn" data-tab="heart">Heart Rate Zones</button>
+        <button class="tab-btn" data-tab="body-fat">Body Fat</button>
+      </div>
+    </section>
+
+    <!-- Calculator Content -->
+    <section class="calculator-content">
+      <!-- BMI Calculator -->
+      <div class="calculator-panel active" id="bmi-calculator">
+        <div class="calculator-info">
+          <h3>Body Mass Index (BMI) Calculator</h3>
+          <p>BMI is a measure of body fat based on height and weight that applies to adult men and women.</p>
+          <div class="info-box">
+            <h4>BMI Categories:</h4>
+            <ul>
+              <li><strong>Underweight:</strong> BMI less than 18.5</li>
+              <li><strong>Normal weight:</strong> BMI 18.5–24.9</li>
+              <li><strong>Overweight:</strong> BMI 25–29.9</li>
+              <li><strong>Obesity:</strong> BMI 30 or greater</li>
+            </ul>
+          </div>
+        </div>
+        <div class="calculator-form">
+          <form id="bmi-form">
+            <div class="form-group">
+              <label for="bmi-height">Height</label>
+              <div class="input-group">
+                <input type="number" id="bmi-height" name="height" min="100" max="250" required>
+                <span class="input-unit">cm</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="bmi-weight">Weight</label>
+              <div class="input-group">
+                <input type="number" id="bmi-weight" name="weight" min="30" max="300" required>
+                <span class="input-unit">kg</span>
+              </div>
+            </div>
+            <button type="submit" class="calculate-btn">Calculate BMI</button>
+          </form>
+          <div id="bmi-result" class="calculator-result">
+            <div class="result-value">
+              <span id="bmi-value">--</span>
+              <span class="result-label">Your BMI</span>
+            </div>
+            <div class="result-category">
+              <span id="bmi-category">--</span>
+            </div>
+            <div class="result-scale">
+              <div class="scale-bar">
+                <div class="scale-segment underweight">
+                  <span>Underweight</span>
+                </div>
+                <div class="scale-segment normal">
+                  <span>Normal</span>
+                </div>
+                <div class="scale-segment overweight">
+                  <span>Overweight</span>
+                </div>
+                <div class="scale-segment obese">
+                  <span>Obese</span>
+                </div>
+              </div>
+              <div id="bmi-marker" class="scale-marker" style="left: 0%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calorie Calculator -->
+      <div class="calculator-panel" id="calorie-calculator">
+        <div class="calculator-info">
+          <h3>Daily Calorie Needs Calculator</h3>
+          <p>Estimate how many calories you need per day based on your activity level and goals.</p>
+          <div class="info-box">
+            <h4>Activity Levels:</h4>
+            <ul>
+              <li><strong>Sedentary:</strong> Little or no exercise</li>
+              <li><strong>Lightly active:</strong> Light exercise/sports 1-3 days/week</li>
+              <li><strong>Moderately active:</strong> Moderate exercise/sports 3-5 days/week</li>
+              <li><strong>Very active:</strong> Hard exercise/sports 6-7 days/week</li>
+              <li><strong>Extra active:</strong> Very hard exercise & physical job or training twice a day</li>
+            </ul>
+          </div>
+        </div>
+        <div class="calculator-form">
+          <form id="calorie-form">
+            <div class="form-group">
+              <label>Gender</label>
+              <div class="radio-group">
+                <label>
+                  <input type="radio" name="gender" value="male" required>
+                  Male
+                </label>
+                <label>
+                  <input type="radio" name="gender" value="female" required>
+                  Female
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="calorie-age">Age</label>
+              <div class="input-group">
+                <input type="number" id="calorie-age" name="age" min="18" max="120" required>
+                <span class="input-unit">years</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="calorie-height">Height</label>
+              <div class="input-group">
+                <input type="number" id="calorie-height" name="height" min="100" max="250" required>
+                <span class="input-unit">cm</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="calorie-weight">Weight</label>
+              <div class="input-group">
+                <input type="number" id="calorie-weight" name="weight" min="30" max="300" required>
+                <span class="input-unit">kg</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="activity-level">Activity Level</label>
+              <select id="activity-level" name="activity" required>
+                <option value="">Select activity level</option>
+                <option value="sedentary">Sedentary</option>
+                <option value="light">Lightly Active</option>
+                <option value="moderate">Moderately Active</option>
+                <option value="very">Very Active</option>
+                <option value="extra">Extra Active</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="goal">Goal</label>
+              <select id="goal" name="goal" required>
+                <option value="">Select your goal</option>
+                <option value="lose">Lose Weight</option>
+                <option value="maintain">Maintain Weight</option>
+                <option value="gain">Gain Weight</option>
+              </select>
+            </div>
+            <button type="submit" class="calculate-btn">Calculate Calories</button>
+          </form>
+          <div id="calorie-result" class="calculator-result">
+            <div class="result-cards">
+              <div class="result-card">
+                <h4>Maintenance</h4>
+                <div class="result-value">
+                  <span id="maintenance-calories">--</span>
+                  <span class="result-unit">calories/day</span>
+                </div>
+                <p>Calories to maintain your current weight</p>
+              </div>
+              <div class="result-card">
+                <h4>Your Goal</h4>
+                <div class="result-value">
+                  <span id="goal-calories">--</span>
+                  <span class="result-unit">calories/day</span>
+                </div>
+                <p id="goal-description">Based on your selected goal</p>
+              </div>
+            </div>
+            <div class="macronutrient-breakdown">
+              <h4>Recommended Macronutrient Breakdown</h4>
+              <div class="macro-chart">
+                <div class="macro-bar">
+                  <div id="protein-bar" class="macro-segment protein" style="width: 30%">
+                    <span>Protein</span>
+                  </div>
+                  <div id="carbs-bar" class="macro-segment carbs" style="width: 45%">
+                    <span>Carbs</span>
+                  </div>
+                  <div id="fat-bar" class="macro-segment fat" style="width: 25%">
+                    <span>Fat</span>
+                  </div>
+                </div>
+              </div>
+              <div class="macro-values">
+                <div class="macro-value">
+                  <span id="protein-value">-- g</span>
+                  <span class="macro-label">Protein</span>
+                </div>
+                <div class="macro-value">
+                  <span id="carbs-value">-- g</span>
+                  <span class="macro-label">Carbs</span>
+                </div>
+                <div class="macro-value">
+                  <span id="fat-value">-- g</span>
+                  <span class="macro-label">Fat</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Water Intake Calculator -->
+      <div class="calculator-panel" id="water-calculator">
+        <div class="calculator-info">
+          <h3>Daily Water Intake Calculator</h3>
+          <p>Calculate how much water you should drink daily based on your weight, activity level, and climate.</p>
+          <div class="info-box">
+            <h4>Why Water Matters:</h4>
+            <p>Proper hydration is essential for many bodily functions including digestion, circulation, temperature regulation, and waste removal.</p>
+          </div>
+        </div>
+        <div class="calculator-form">
+          <form id="water-form">
+            <div class="form-group">
+              <label for="water-weight">Weight</label>
+              <div class="input-group">
+                <input type="number" id="water-weight" name="weight" min="30" max="300" required>
+                <span class="input-unit">kg</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="water-activity">Activity Level</label>
+              <select id="water-activity" name="activity" required>
+                <option value="">Select activity level</option>
+                <option value="sedentary">Sedentary</option>
+                <option value="light">Lightly Active</option>
+                <option value="moderate">Moderately Active</option>
+                <option value="very">Very Active</option>
+                <option value="extra">Extra Active</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="climate">Climate</label>
+              <select id="climate" name="climate" required>
+                <option value="">Select your climate</option>
+                <option value="cold">Cold</option>
+                <option value="moderate">Moderate</option>
+                <option value="hot">Hot</option>
+                <option value="very-hot">Very Hot & Humid</option>
+              </select>
+            </div>
+            <button type="submit" class="calculate-btn">Calculate Water Intake</button>
+          </form>
+          <div id="water-result" class="calculator-result">
+            <div class="result-value">
+              <span id="water-value">--</span>
+              <span class="result-unit">liters/day</span>
+            </div>
+            <div class="water-visualization">
+              <div class="water-container">
+                <div id="water-fill" class="water-fill"></div>
+              </div>
+              <div class="water-glasses">
+                <span id="glasses-count">-- glasses</span>
+                <span class="glasses-note">(250ml glasses)</span>
+              </div>
+            </div>
+            <div class="result-tips">
+              <h4>Hydration Tips:</h4>
+              <ul>
+                <li>Drink a glass of water when you wake up</li>
+                <li>Carry a reusable water bottle throughout the day</li>
+                <li>Set reminders to drink water regularly</li>
+                <li>Increase intake during exercise and hot weather</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Heart Rate Zones Calculator -->
+      <div class="calculator-panel" id="heart-calculator">
+        <div class="calculator-info">
+          <h3>Heart Rate Zones Calculator</h3>
+          <p>Calculate your target heart rate zones for optimal exercise intensity based on your age and fitness level.</p>
+          <div class="info-box">
+            <h4>Heart Rate Zones:</h4>
+            <ul>
+              <li><strong>Zone 1 (50-60%):</strong> Very light intensity, warm-up/recovery</li>
+              <li><strong>Zone 2 (60-70%):</strong> Light intensity, improves basic endurance</li>
+              <li><strong>Zone 3 (70-80%):</strong> Moderate intensity, improves aerobic fitness</li>
+              <li><strong>Zone 4 (80-90%):</strong> Hard intensity, improves anaerobic threshold</li>
+              <li><strong>Zone 5 (90-100%):</strong> Maximum intensity, increases maximum performance</li>
+            </ul>
+          </div>
+        </div>
+        <div class="calculator-form">
+          <form id="heart-rate-form">
+            <div class="form-group">
+              <label for="heart-age">Age</label>
+              <div class="input-group">
+                <input type="number" id="heart-age" name="age" min="18" max="120" required>
+                <span class="input-unit">years</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="resting-heart-rate">Resting Heart Rate</label>
+              <div class="input-group">
+                <input type="number" id="resting-heart-rate" name="resting-hr" min="40" max="120" required>
+                <span class="input-unit">bpm</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="fitness-level">Fitness Level</label>
+              <select id="fitness-level" name="fitness" required>
+                <option value="">Select fitness level</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+                <option value="athlete">Athlete</option>
+              </select>
+            </div>
+            <button type="submit" class="calculate-btn">Calculate Heart Rate Zones</button>
+          </form>
+          <div id="heart-result" class="calculator-result">
+            <div class="result-value">
+              <span id="max-hr-value">--</span>
+              <span class="result-unit">bpm</span>
+              <span class="result-label">Maximum Heart Rate</span>
+            </div>
+            <div class="heart-rate-zones">
+              <div class="zone-chart">
+                <div class="zone zone-5">
+                  <span class="zone-label">Zone 5</span>
+                  <span id="zone-5-range">-- - -- bpm</span>
+                </div>
+                <div class="zone zone-4">
+                  <span class="zone-label">Zone 4</span>
+                  <span id="zone-4-range">-- - -- bpm</span>
+                </div>
+                <div class="zone zone-3">
+                  <span class="zone-label">Zone 3</span>
+                  <span id="zone-3-range">-- - -- bpm</span>
+                </div>
+                <div class="zone zone-2">
+                  <span class="zone-label">Zone 2</span>
+                  <span id="zone-2-range">-- - -- bpm</span>
+                </div>
+                <div class="zone zone-1">
+                  <span class="zone-label">Zone 1</span>
+                  <span id="zone-1-range">-- - -- bpm</span>
+                </div>
+              </div>
+            </div>
+            <div class="zone-descriptions">
+              <div class="zone-description" id="zone-description">
+                <p>Select a zone on the chart to see details about training in that zone.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Body Fat Calculator -->
+      <div class="calculator-panel" id="body-fat-calculator">
+        <div class="calculator-info">
+          <h3>Body Fat Percentage Calculator</h3>
+          <p>Estimate your body fat percentage using the Navy method, which uses waist, neck, and hip measurements.</p>
+          <div class="info-box">
+            <h4>Body Fat Categories:</h4>
+            <table class="body-fat-table">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Men</th>
+                  <th>Women</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Essential Fat</td>
+                  <td>2-5%</td>
+                  <td>10-13%</td>
+                </tr>
+                <tr>
+                  <td>Athletes</td>
+                  <td>6-13%</td>
+                  <td>14-20%</td>
+                </tr>
+                <tr>
+                  <td>Fitness</td>
+                  <td>14-17%</td>
+                  <td>21-24%</td>
+                </tr>
+                <tr>
+                  <td>Average</td>
+                  <td>18-24%</td>
+                  <td>25-31%</td>
+                </tr>
+                <tr>
+                  <td>Obese</td>
+                  <td>25%+</td>
+                  <td>32%+</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="calculator-form">
+          <form id="body-fat-form">
+            <div class="form-group">
+              <label>Gender</label>
+              <div class="radio-group">
+                <label>
+                  <input type="radio" name="gender" value="male" required>
+                  Male
+                </label>
+                <label>
+                  <input type="radio" name="gender" value="female" required>
+                  Female
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="bf-height">Height</label>
+              <div class="input-group">
+                <input type="number" id="bf-height" name="height" min="100" max="250" required>
+                <span class="input-unit">cm</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="bf-weight">Weight</label>
+              <div class="input-group">
+                <input type="number" id="bf-weight" name="weight" min="30" max="300" required>
+                <span class="input-unit">kg</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="neck">Neck Circumference</label>
+              <div class="input-group">
+                <input type="number" id="neck" name="neck" min="20" max="80" step="0.1" required>
+                <span class="input-unit">cm</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="waist">Waist Circumference</label>
+              <div class="input-group">
+                <input type="number" id="waist" name="waist" min="40" max="200" step="0.1" required>
+                <span class="input-unit">cm</span>
+              </div>
+            </div>
+            <div class="form-group female-only" style="display: none;">
+              <label for="hip">Hip Circumference</label>
+              <div class="input-group">
+                <input type="number" id="hip" name="hip" min="40" max="200" step="0.1">
+                <span class="input-unit">cm</span>
+              </div>
+            </div>
+            <div class="measurement-guide">
+              <button type="button" id="show-guide-btn" class="text-btn">How to measure correctly</button>
+              <div id="measurement-instructions" class="measurement-instructions" style="display: none;">
+                <h4>Measurement Instructions:</h4>
+                <ul>
+                  <li><strong>Neck:</strong> Measure around the middle of your neck, below the larynx (Adam's apple).</li>
+                  <li><strong>Waist:</strong> Measure at the narrowest point, usually around the navel.</li>
+                  <li><strong>Hip:</strong> Measure at the widest point around the buttocks.</li>
+                </ul>
+                <p>Use a flexible tape measure and ensure it's snug but not tight.</p>
+              </div>
+            </div>
+            <button type="submit" class="calculate-btn">Calculate Body Fat</button>
+          </form>
+          <div id="body-fat-result" class="calculator-result">
+            <div class="result-value">
+              <span id="body-fat-value">--</span>
+              <span class="result-unit">%</span>
+              <span class="result-label">Body Fat Percentage</span>
+            </div>
+            <div class="result-category">
+              <span id="body-fat-category">--</span>
+            </div>
+            <div class="body-composition">
+              <h4>Body Composition</h4>
+              <div class="composition-chart">
+                <div id="fat-mass-bar" class="composition-segment fat-mass" style="width: 0%">
+                  <span>Fat Mass</span>
+                </div>
+                <div id="lean-mass-bar" class="composition-segment lean-mass" style="width: 100%">
+                  <span>Lean Mass</span>
+                </div>
+              </div>
+              <div class="composition-values">
+                <div class="composition-value">
+                  <span id="fat-mass-value">-- kg</span>
+                  <span class="composition-label">Fat Mass</span>
+                </div>
+                <div class="composition-value">
+                  <span id="lean-mass-value">-- kg</span>
+                  <span class="composition-label">Lean Mass</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="related-resources">
+      <h2>Related Resources</h2>
+      <div class="resources-grid">
+        <div class="resource-card">
+          <div class="resource-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </div>
+          <h3>Health Articles</h3>
+          <p>Learn more about these health metrics and why they matter</p>
+          <a href="articles.html" class="resource-link">Browse Articles</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+          </div>
+          <h3>Health Tracker</h3>
+          <p>Track your metrics over time to monitor your progress</p>
+          <a href="#" class="resource-link">Start Tracking</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <h3>Personalized Plans</h3>
+          <p>Get customized diet and exercise plans based on your metrics</p>
+          <a href="diet-exercise.html" class="resource-link">View Plans</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2>HealthHub</h2>
+          <p>Your complete health resource</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="articles.html">Articles</a></li>
+              <li><a href="symptom-checker.html">Symptom Checker</a></li>
+              <li><a href="diet-exercise.html">Diet & Exercise</a></li>
+              <li><a href="calculators.html">Health Calculators</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Connect</h3>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                </svg>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 HealthHub. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/calculators.js"></script>
+</body>
+</html>
+
